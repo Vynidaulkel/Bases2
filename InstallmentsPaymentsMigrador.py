@@ -16,7 +16,7 @@ def installmentsPaymentsMigrador():
 
     for row in df.itertuples():
         cursor.execute('''
-                    INSERT INTO test_installments (SK_ID_PREV, SK_ID_CURR, NUM_INSTALMENT_VERSION,
+                    INSERT INTO dbo.test_installments (SK_ID_PREV, SK_ID_CURR, NUM_INSTALMENT_VERSION,
                     NUM_INSTALMENT_NUMBER, DAYS_INSTALMENT,
                     DAYS_ENTRY_PAYMENT, AMT_INSTALMENT, AMT_PAYMENT)
                     VALUES (?,?,?,?,?,?,?,?)
