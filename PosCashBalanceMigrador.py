@@ -16,17 +16,14 @@ def posCashBalanceMigrador():
 
     for row in df.itertuples():
         cursor.execute('''
-                    INSERT INTO finanza.POS_CASH_balance (SK_ID_PREV, SK_ID_CURR, MONTHS_BALANCE, AMT_BALANCE, AMT_CREDIT_LIMIT_ACTUAL,
-                    AMT_DRAWINGS_AMT_CURRENT, AMT_DRAWINGS_CURRENT)
-                    VALUES (?,?,?,?,?,?,?)
+                    INSERT INTO test_POS_CASH_balance (SK_ID_PREV, SK_ID_CURR, MONTHS_BALANCE, CNT_INSTALMENT, CNT_INSTALMENT_FUTURE)
+                    VALUES (?,?,?,?,?)
                     ''',
                     row.SK_ID_PREV,
                     row.SK_ID_CURR,
                     row.MONTHS_BALANCE,
-                    row.AMT_BALANCE,
-                    row.AMT_CREDIT_LIMIT_ACTUAL,
-                    row.AMT_DRAWINGS_AMT_CURRENT,
-                    row.AMT_DRAWINGS_CURRENT,
+                    row.CNT_INSTALMENT,
+                    row.CNT_INSTALMENT_FUTURE
                     )
     conn.commit()
 
